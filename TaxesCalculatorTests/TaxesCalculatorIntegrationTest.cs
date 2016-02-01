@@ -38,5 +38,18 @@
             Assert.That(money, Is.Not.Null);
             Assert.That(money.Amount, Is.EqualTo(2000m));
         }
+
+        [Test]
+        public void ShouldReturnProgressiveTaxValueForGivenIncomes()
+        {
+            const decimal amount = 60000m;
+            var response = server.HttpClient.GetAsync($"api/taxes/{amount}?flat=false").Result;
+
+            var result = response.Content.ReadAsStringAsync().Result;
+            var money = JsonConvert.DeserializeObject<Money>(result);
+
+            Assert.That(money, Is.Not.Null);
+            Assert.That(money.Amount, Is.EqualTo(12000m));
+        }
     }
 }
