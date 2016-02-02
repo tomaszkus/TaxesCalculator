@@ -6,7 +6,7 @@
 
     public class FlatTaxCalculator
     {
-        public Money CalculateFor(Money incomes)
+        public virtual Money CalculateFor(Money incomes)
         {
             if (incomes.Amount < 0)
             {
