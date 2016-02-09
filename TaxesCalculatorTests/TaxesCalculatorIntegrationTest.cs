@@ -42,14 +42,14 @@
         [Test]
         public void ShouldReturnProgressiveTaxValueForGivenIncomes()
         {
-            const decimal amount = 60000m;
+            const decimal amount = 61000m;
             var response = server.HttpClient.GetAsync($"api/taxes/{amount}?flat=false").Result;
 
             var result = response.Content.ReadAsStringAsync().Result;
             var money = JsonConvert.DeserializeObject<Money>(result);
 
             Assert.That(money, Is.Not.Null);
-            Assert.That(money.Amount, Is.EqualTo(12000m));
+            Assert.That(money.Amount, Is.EqualTo(12300m));
         }
     }
 }
