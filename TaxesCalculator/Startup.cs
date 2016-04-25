@@ -38,6 +38,8 @@
 
             builder.RegisterType<FlatTaxCalculator>().SingleInstance();
 
+            builder.RegisterType<ProgressiveTaxCalculator>().SingleInstance();
+
             return builder.Build();
         }
     }
