@@ -120,9 +120,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculation\ProgressiveTaxCalculator.cs" />
     <Compile Include="Controllers\TaxesController.cs" />
-    <Compile Include="Calculation\FlatTaxCalculator.cs" />
+    <Compile Include="Calculation\GenercTaxCalculator.cs" />
     <Compile Include="Models\Money.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -4,7 +4,7 @@
 
     using TaxesCalculator.Models;
 
-    public class FlatTaxCalculator
+    public class GenercTaxCalculator
     {
         public virtual Money CalculateFor(Money incomes)
         {

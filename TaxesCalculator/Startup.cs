@@ -36,9 +36,7 @@
 
             builder.RegisterType<TaxesController>().InstancePerRequest();
 
-            builder.RegisterType<FlatTaxCalculator>().SingleInstance();
-
-            builder.RegisterType<ProgressiveTaxCalculator>().SingleInstance();
+            builder.RegisterType<GenercTaxCalculator>().SingleInstance();
 
             return builder.Build();
         }

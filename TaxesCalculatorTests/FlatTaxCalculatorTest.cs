@@ -10,7 +10,7 @@
     [TestFixture]
     public class FlatTaxCalculatorTest
     {
-        private readonly FlatTaxCalculator calculator = new FlatTaxCalculator();
+        private readonly GenercTaxCalculator calculator = new GenercTaxCalculator();
 
         [Test]
         public void ShouldThrowArgumentOutOfRangeExceptionForNegativeIncome()
