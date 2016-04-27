@@ -88,7 +88,6 @@
   <ItemGroup>
     <Compile Include="FlatTaxCalculatorTest.cs" />
     <Compile Include="TaxControllerTest.cs" />
-    <Compile Include="ProgressiveTaxCalculatorTest.cs" />
     <Compile Include="TaxesCalculatorIntegrationTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

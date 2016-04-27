@@ -18,7 +18,7 @@
         [HttpGet]
         public Money GetTax(decimal incomes, bool flat = true)
         {
-            return this.genericTaxCalculator.CalculateFor(new Money(incomes));
+            return this.genericTaxCalculator.CalculateFor(new Money(incomes), flat);
         }
     }
 }

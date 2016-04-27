@@ -40,6 +40,21 @@
         }
 
         [Test]
+        public void ShouldReturnFlatTaxValueForGivenIncomesIfflatequaltotrue()
+        {
+
+            const decimal amount = 10000m;
+            var response = server.HttpClient.GetAsync($"api/taxes/{amount}?flat=true").Result;
+
+            var result = response.Content.ReadAsStringAsync().Result;
+            var money = JsonConvert.DeserializeObject<Money>(result);
+
+            Assert.That(money, Is.Not.Null);
+            Assert.That(money.Amount, Is.EqualTo(2000m));
+
+        }
+
+        [Test]
         public void ShouldReturnProgressiveTaxValueForGivenIncomes()
         {
             const decimal amount = 61000m;

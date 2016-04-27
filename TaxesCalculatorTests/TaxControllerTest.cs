@@ -2,6 +2,8 @@
 {
     using Moq;
 
+    using System;
+
     using NUnit.Framework;
 
     using TaxesCalculator.Calculation;
@@ -27,7 +29,7 @@
         public void ShouldCallOnlyFlatTaxCalculator()
         {
             // given
-            flatTaskCalculator.Setup(x => x.CalculateFor(It.IsAny<Money>())).Returns(new Money(20));
+            flatTaskCalculator.Setup(x => x.CalculateFor(It.IsAny<Money>(), It.IsAny<Boolean>())).Returns(new Money(20));
 
             // when
             var result = controller.GetTax(100);

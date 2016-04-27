@@ -19,7 +19,7 @@
             Exception exception = null;
             try
             {
-                calculator.CalculateFor(new Money(-1));
+                calculator.CalculateFor(new Money(-1), true);
             }
             catch (Exception e)
             {
@@ -34,10 +34,10 @@
         [TestCase(0, 0)]
         [TestCase(100, 20)]
         [TestCase(10000, 2000)]
-        public void ShouldCalculateTax(decimal incomes, decimal expectedTax)
+        public void ShouldCalculateFlatTax(decimal incomes, decimal expectedTax)
         {
             // when
-            var result = this.calculator.CalculateFor(new Money(incomes));
+            var result = this.calculator.CalculateFor(new Money(incomes), true);
 
             // then
             Assert.That(result.Amount, Is.EqualTo(expectedTax));
